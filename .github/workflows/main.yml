@@ -1,0 +1,19 @@
+name: Just Do It
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  just_do_it:
+    runs-on: ubuntu-latest
+    steps:
+      -  uses: actions/checkout@v2
+
+      - name: 🔥
+        run: bin/doit
+
+      - name: 🤪
+        run: bin/commit ${{ secrets.TOKEN }} ${{ github.repository_owner }}
