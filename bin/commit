@@ -7,4 +7,4 @@ git config user.name $OWNER
 git config user.email $(curl -s -H "Authorization: Bearer $TOKEN" https://api.github.com/users/$OWNER | jq -r '.email')
 git add .
 git commit -m "just do it :see_no_evil: :sparkle:"
-git push origin HEAD
+git push -f origin HEAD
